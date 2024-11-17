@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useSignal } from "@preact/signals-react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const count = useSignal(0);
 
   return (
-    <main className="absolute size-full bg-black">
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+    <div className="absolute size-full flex-col items-center justify-center bg-black px-10">
+      <main className="size-full bg-white">
+        <h1>Vite + React</h1>
+        <button
+          onClick={() => (count.value += 1)}
+          className="border border-black"
+        >
           count is {count}
         </button>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
