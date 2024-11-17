@@ -4,15 +4,17 @@ function App() {
   const count = useSignal(0);
 
   return (
-    <div className="absolute size-full flex-col items-center justify-center bg-black px-10">
-      <main className="size-full bg-white">
-        <h1>Vite + React</h1>
+    <div className="absolute flex size-full flex-row items-center justify-center gap-3 bg-gray-300 p-3">
+      <div className="flex h-full w-14 flex-col rounded-md bg-gray-400 p-1 shadow shadow-gray-600">
         <button
           onClick={() => (count.value += 1)}
-          className="border border-black"
+          className="aspect-square rounded-md bg-gray-300 shadow shadow-gray-600"
         >
-          count is {count}
+          {count}
         </button>
+      </div>
+      <main className="size-full rounded-md bg-white shadow shadow-gray-600">
+        <h1>Vite + React</h1>
       </main>
     </div>
   );
